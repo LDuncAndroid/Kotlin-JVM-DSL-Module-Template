@@ -1,12 +1,12 @@
 plugins {
     `kotlin-dsl`
-    id("org.jetbrains.kotlin.jvm") version "1.3.72"
+    id(Plugins.Kotlin.jvm) version Versions.Kotlin.jvm
     java
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = CompilerOptions.jvmTarget
     }
 }
 
@@ -15,11 +15,8 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
-
+    implementation(Libs.Kotlin.stdLib)
+    implementation(Libs.Kotlin.coroutines)
+    testImplementation(Libs.UnitTest.Kotlin.test)
+    testImplementation(Libs.UnitTest.Kotlin.testJunit)
 }
-
