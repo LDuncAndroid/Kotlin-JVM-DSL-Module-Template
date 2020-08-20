@@ -1,13 +1,3 @@
-buildscript {
-    repositories {
-        google()
-        gradlePluginPortal()
-    }
-    dependencies {
-        classpath("org.gradle.kotlin:plugins:1.3.6")
-    }
-}
-
 plugins {
     `kotlin-dsl`
     id("org.jetbrains.kotlin.jvm") version "1.3.72"
